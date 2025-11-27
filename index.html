@@ -81,9 +81,24 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
         .project h3 {
-            margin-top: 0;
+            margin: 0;
             font-size: 1.25rem;
+            color: #2c5282;
+        }
+        .project-link svg {
+            width: 20px;
+            height: 20px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+        .project-link:hover svg {
             color: #2c5282;
         }
         .project p {
@@ -155,11 +170,29 @@
 
         <main class="projects">
             <div class="project">
-                <h3>Distill. Your bookmarks, purified.</h3>
+                <div class="project-header">
+                    <h3>Distill. Your bookmarks, purified.</h3>
+                    <a href="https://chromewebstore.google.com/detail/distill/cnbeimofdpcffODfcccgofjdbagijnhh" target="_blank" class="project-link" title="View Project">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
                 <p>Stop drowning in digital noise. Distill boils your bookmarking experience down to its most potent elements. We have stripped away the heavy folders and complex dashboards to give you a simple, filterable stream of your most important links. With frictionless inline editing and deletion, managing your web habits becomes a moment of zen rather than a chore.</p>
             </div>
             <div class="project">
-                <h3>Vinyl Vibe</h3>
+                <div class="project-header">
+                    <h3>Vinyl Vibe</h3>
+                    <a href="#" target="_blank" class="project-link" title="View Project">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
                 <p>Work in progress</p>
                 <p>Vinyl Vibe is a social playground for crate diggers. We’ve turned collecting into a game where you showcase your heavy hitters and try to match them with other users' libraries. It's pretty simple: the more records you match, the more power you get to curate and style your own personal collection. With built-in chat to talk shop, it’s all about connecting over the music you love—minus the dust.</p>
             </div>
