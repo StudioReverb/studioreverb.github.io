@@ -90,6 +90,39 @@
             margin-bottom: 0;
             color: #666;
         }
+        .modal {
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            display: none; 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            text-align: left;
+        }
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -104,7 +137,7 @@
                 <span class="logo-name">Studio Reverb</span>
             </a>
             <nav>
-                <a href="#" title="About">
+                <a href="#" id="about-button" title="About">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="16" x2="12" y2="12"></line>
@@ -128,10 +161,39 @@
             <div class="project">
                 <h3>Vinyl Vibe</h3>
                 <p>Work in progress</p>
-                <p>A vibe coded game that explores the social aspects of vinyl collecting.</p>
+                <p>Vinyl Vibe is a social playground for crate diggers. We’ve turned collecting into a game where you showcase your heavy hitters and try to match them with other users' libraries. It's pretty simple: the more records you match, the more power you get to curate and style your own personal collection. With built-in chat to talk shop, it’s all about connecting over the music you love—minus the dust.</p>
             </div>
         </main>
     </div>
+
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>About Studio Reverb</h2>
+            <p>Think of Studio Reverb as a digital sandbox. It’s a creative experiment where I mix design and development with a little help from AI. The goal isn't just to write code, but to see what’s possible when you let modern tools handle the heavy lifting. It's all about building cool, polished web experiences that focus on the vibe rather than the complexity.</p>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("about-modal");
+        var btn = document.getElementById("about-button");
+        var span = document.getElementsByClassName("close-button")[0];
+
+        btn.onclick = function(event) {
+            event.preventDefault();
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
