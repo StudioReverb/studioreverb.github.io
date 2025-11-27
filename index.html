@@ -18,6 +18,9 @@
             justify-content: center;
             min-height: 100vh;
         }
+        svg {
+            fill: none;
+        }
         .container {
             width: 90%;
             max-width: 800px;
@@ -178,7 +181,7 @@
     <div class="container">
         <header>
             <div class="logo">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 100 100">
                     <path d="M20 50 C20 27.9 37.9 10 60 10 C82.1 10 100 27.9 100 50 C100 72.1 82.1 90 60 90 C37.9 90 20 72.1 20 50 Z" fill="#a0aec0"/>
                     <path d="M0 50 C0 27.9 17.9 10 40 10 C62.1 10 80 27.9 80 50 C80 72.1 62.1 90 40 90 C17.9 90 0 72.1 0 50 Z" fill="#718096"/>
                 </svg>
@@ -186,7 +189,7 @@
             </div>
             <nav>
                 <a href="#" id="about-button" class="nav-link" title="About">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="16" x2="12" y2="12"></line>
                         <line x1="12" y1="8" x2="12.01" y2="8"></line>
@@ -194,7 +197,7 @@
                     <span class="nav-text">About</span>
                 </a>
                 <a href="https://buymeacoffee.com/studioreverb" target="_blank" class="nav-link" title="Support Me">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
                         <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
                         <line x1="6" y1="1" x2="6" y2="4"></line>
@@ -211,7 +214,7 @@
                 <div class="project-header">
                     <h3>Distill</h3>
                     <a href="https://chromewebstore.google.com/detail/distill/cnbeimofdpcffODfcccgofjdbagijnhh" target="_blank" class="project-link" title="View Project">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                             <polyline points="15 3 21 3 21 9"></polyline>
                             <line x1="10" y1="14" x2="21" y2="3"></line>
@@ -228,7 +231,7 @@
                         <span class="wip-badge">In Progress</span>
                     </div>
                     <a href="#" target="_blank" class="project-link" title="View Project" style="display: none;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                             <polyline points="15 3 21 3 21 9"></polyline>
                             <line x1="10" y1="14" x2="21" y2="3"></line>
@@ -249,9 +252,9 @@
     </div>
 
     <script>
-        var modal = document.getElementById("about-modal");
-        var btn = document.getElementById("about-button");
-        var span = document.getElementsByClassName("close-button")[0];
+        const modal = document.getElementById("about-modal");
+        const btn = document.getElementById("about-button");
+        const span = document.getElementsByClassName("close-button")[0];
 
         btn.onclick = function(event) {
             event.preventDefault();
@@ -263,7 +266,7 @@
         }
 
         window.onclick = function(event) {
-            if (event.target == modal) {
+            if (event.target === modal) {
                 modal.style.display = "none";
             }
         }
