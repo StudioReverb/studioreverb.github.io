@@ -49,7 +49,7 @@
             display: flex;
             gap: 1rem;
         }
-        nav a {
+        .nav-link {
             color: #555;
             text-decoration: none;
             display: flex;
@@ -58,12 +58,18 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
-        nav a:hover {
+        .nav-link:hover {
             background-color: #e6eaf0;
         }
-        nav svg {
-            width: 20px;
-            height: 20px;
+        .nav-link svg {
+            width: 24px;
+            height: 24px;
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+        .nav-text {
+            display: none;
+            margin-left: 8px;
+            font-weight: 600;
         }
         .projects {
             margin-top: 4rem;
@@ -156,6 +162,15 @@
             text-decoration: none;
             cursor: pointer;
         }
+        @media (min-width: 768px) {
+            .nav-link svg {
+                width: 20px;
+                height: 20px;
+            }
+            .nav-text {
+                display: inline;
+            }
+        }
     </style>
 </head>
 <body>
@@ -170,14 +185,15 @@
                 <span class="logo-name">Studio Reverb</span>
             </a>
             <nav>
-                <a href="#" id="about-button" title="About">
+                <a href="#" id="about-button" class="nav-link" title="About">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="16" x2="12" y2="12"></line>
                         <line x1="12" y1="8" x2="12.01" y2="8"></line>
                     </svg>
+                    <span class="nav-text">About</span>
                 </a>
-                <a href="https://buymeacoffee.com/studioreverb" target="_blank" title="Support Me">
+                <a href="https://buymeacoffee.com/studioreverb" target="_blank" class="nav-link" title="Support Me">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
                         <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
@@ -185,6 +201,7 @@
                         <line x1="10" y1="1" x2="10" y2="4"></line>
                         <line x1="14" y1="1" x2="14" y2="4"></line>
                     </svg>
+                    <span class="nav-text">Support Me</span>
                 </a>
             </nav>
         </header>
