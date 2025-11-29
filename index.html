@@ -31,8 +31,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
+            padding: 0 1rem;
         }
 
         svg {
@@ -44,9 +44,8 @@
         }
 
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 800px;
-            text-align: center;
         }
 
         header {
@@ -106,12 +105,23 @@
             font-weight: 600;
         }
 
-        .projects {
-            margin-top: 4rem;
+        main {
+            width: 100%;
+        }
+
+        .about-section {
+            margin-top: 2rem;
+            margin-bottom: 4rem;
+            text-align: left;
+        }
+
+        .about-section p {
+            color: #666;
+            font-size: 1.125rem;
+            line-height: 1.6;
         }
 
         .section-header {
-            text-align: left;
             font-size: 1.5rem;
             font-weight: 600;
             color: var(--primary-color);
@@ -185,33 +195,11 @@
             color: #666;
         }
 
-        dialog {
-            padding: 20px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            width: 80%;
-            max-width: 500px;
-            box-shadow: 0 10px 20px var(--shadow-color);
-        }
-
-        dialog::backdrop {
-            background-color: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(2px);
-        }
-
-        .close-button {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            background: none;
+        .footer-divider {
+            width: 100%;
             border: none;
-            cursor: pointer;
-        }
-
-        .close-button:hover,
-        .close-button:focus {
-            color: var(--text-color);
+            border-top: 1px solid var(--border-color);
+            margin: 4rem 0 2rem;
         }
 
         @media (min-width: 768px) {
@@ -237,14 +225,6 @@
                 <span class="logo-name">Studio Reverb</span>
             </a>
             <nav>
-                <a href="#" id="about-button" class="nav-link" title="About">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="12" y1="16" x2="12" y2="12"></line>
-                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                    </svg>
-                    <span class="nav-text">About</span>
-                </a>
                 <a href="https://buymeacoffee.com/studioreverb" target="_blank" class="nav-link" title="Support the studio">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
@@ -258,67 +238,47 @@
             </nav>
         </header>
 
-        <main class="projects">
-            <h2 class="section-header">From the Studio</h2>
-            <section class="project">
-                <div class="project-header">
-                    <h3>Distill</h3>
-                    <a href="https://chromewebstore.google.com/detail/distill/cnbeimofdpcffODfcccgofjdbagijnhh" target="_blank" class="project-link" aria-label="View Distill project on Chrome Web Store">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                    </a>
-                </div>
-                <p class="project-tagline">Your bookmarks, purified.</p>
-                <p>Stop drowning in digital noise. Distill boils your bookmarking experience down to its most potent elements. We have stripped away the heavy folders and complex dashboards to give you a simple, filterable stream of your most important links. With frictionless inline editing and deletion, managing your web habits becomes a moment of zen rather than a chore.</p>
+        <main>
+            <section class="about-section">
+                <p>A creative experiment in mixing design, development, and AI to see what’s possible when you let modern tools handle the heavy lifting. It's all about building cool, polished experiences that focus on the fun rather than the complexity.</p>
             </section>
-            <section class="project">
-                <div class="project-header">
-                    <div class="project-title-container">
-                        <h3>Vinyl Vibe</h3>
-                        <span class="wip-badge">In Progress</span>
+
+            <section class="projects">
+                <h2 class="section-header">From the Studio</h2>
+                <section class="project">
+                    <div class="project-header">
+                        <h3>Distill</h3>
+                        <a href="https://chromewebstore.google.com/detail/distill/cnbeimofdpcffODfcccgofjdbagijnhh" target="_blank" class="project-link" aria-label="View Distill project on Chrome Web Store">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
                     </div>
-                    <a href="#" target="_blank" class="project-link" aria-label="View Vinyl Vibe project (coming soon)" style="display: none;">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                    </a>
-                </div>
-                <p>Vinyl Vibe is a social playground for crate diggers. We’ve turned collecting into a game where you showcase your heavy hitters and try to match them with other users' libraries. It's pretty simple: the more records you match, the more power you get to curate and style your own personal collection. With built-in chat to talk shop, it’s all about connecting over the music you love—minus the dust.</p>
+                    <p class="project-tagline">Your bookmarks, purified.</p>
+                    <p>Stop drowning in digital noise. Distill boils your bookmarking experience down to its most potent elements. We have stripped away the heavy folders and complex dashboards to give you a simple, filterable stream of your most important links. With frictionless inline editing and deletion, managing your web habits becomes a moment of zen rather than a chore.</p>
+                </section>
+                <section class="project">
+                    <div class="project-header">
+                        <div class="project-title-container">
+                            <h3>Vinyl Vibe</h3>
+                            <span class="wip-badge">In Progress</span>
+                        </div>
+                        <a href="#" target="_blank" class="project-link" aria-label="View Vinyl Vibe project (coming soon)" style="display: none;">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <p>Vinyl Vibe is a social playground for crate diggers. We’ve turned collecting into a game where you showcase your heavy hitters and try to match them with other users' libraries. It's pretty simple: the more records you match, the more power you get to curate and style your own personal collection. With built-in chat to talk shop, it’s all about connecting over the music you love—minus the dust.</p>
+                </section>
             </section>
         </main>
+        <hr class="footer-divider">
     </div>
-
-    <dialog id="about-modal" aria-labelledby="modal-title">
-        <button class="close-button" aria-label="Close modal">&times;</button>
-        <h2 id="modal-title">About Studio Reverb</h2>
-        <p>Studio Reverb is a creative experiment where I mix design and development with a little help from AI. The goal isn't just to write code, but to see what’s possible when you let modern tools handle the heavy lifting. It's all about building cool, polished web experiences that focus on the vibe rather than the complexity.</p>
-    </dialog>
-
-    <script>
-        const aboutModal = document.getElementById('about-modal');
-        const openModalButton = document.getElementById('about-button');
-        const closeModalButton = aboutModal.querySelector('.close-button');
-
-        openModalButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            aboutModal.showModal();
-        });
-
-        closeModalButton.addEventListener('click', () => {
-            aboutModal.close();
-        });
-
-        aboutModal.addEventListener('click', (event) => {
-            if (event.target === aboutModal) {
-                aboutModal.close();
-            }
-        });
-    </script>
 
 </body>
 </html>
