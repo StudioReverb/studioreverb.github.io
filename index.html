@@ -1,232 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Reverb</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M20 50 C20 27.9 37.9 10 60 10 C82.1 10 100 27.9 100 50 C100 72.1 82.1 90 60 90 C37.9 90 20 72.1 20 50 Z' fill='%23a0aec0'/><path d='M0 50 C0 27.9 17.9 10 40 10 C62.1 10 80 27.9 80 50 C80 72.1 62.1 90 40 90 C17.9 90 0 72.1 0 50 Z' fill='%23718096'/></svg>">
-    <style>
-        :root {
-            --bg-color: #f0f4f8;
-            --text-color: #333;
-            --primary-color: #2c5282;
-            --secondary-color: #718096;
-            --muted-color: #a0aec0;
-            --card-bg-color: #fff;
-            --border-color: #dce4ec;
-            --hover-bg-color: #e6eaf0;
-            --wip-bg-color: #e2e8f0;
-            --wip-text-color: #4a5568;
-            --shadow-color: rgba(0, 0, 0, 0.05);
+    <meta name="description" content="Studio Reverb: A creative experiment in mixing design, development, and AI.">
 
-            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --border-radius: 8px;
-        }
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studioreverb.github.io/">
+    <meta property="og:title" content="Studio Reverb">
+    <meta property="og:description" content="A creative experiment in mixing design, development, and AI.">
+    <meta property="og:image" content="https://studioreverb.github.io/assets/og-image.png">
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-family);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 0 1rem;
-        }
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://studioreverb.github.io/">
+    <meta property="twitter:title" content="Studio Reverb">
+    <meta property="twitter:description" content="A creative experiment in mixing design, development, and AI.">
+    <meta property="twitter:image" content="https://studioreverb.github.io/assets/og-image.png">
 
-        svg {
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 800px;
-        }
-
-        header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--text-color);
-        }
-
-        .logo svg {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-            stroke: none;
-        }
-
-        .logo-name {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        nav {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .nav-link {
-            color: #555;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            padding: 0.5rem;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            background-color: var(--hover-bg-color);
-        }
-
-        .nav-link svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        .nav-text {
-            display: none;
-            margin-left: 8px;
-            font-weight: 600;
-        }
-
-        main {
-            width: 100%;
-        }
-
-        .about-section {
-            margin-top: 2rem;
-            margin-bottom: 4rem;
-            text-align: left;
-        }
-
-        .about-section p {
-            color: #666;
-            font-size: 1.125rem;
-            line-height: 1.6;
-        }
-
-        .section-header {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .project {
-            background-color: var(--card-bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px var(--shadow-color);
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .project h3 {
-            margin: 0;
-            font-size: 1.25rem;
-            color: var(--primary-color);
-        }
-        
-        .project-title-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .wip-badge {
-            background-color: var(--wip-bg-color);
-            color: var(--wip-text-color);
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 0.5rem;
-            border-radius: 9999px;
-            margin-left: 0.75rem;
-        }
-
-        .project-link svg {
-            width: 20px;
-            height: 20px;
-            color: #555;
-            transition: color 0.3s ease;
-        }
-
-        .project-link:hover svg {
-            color: var(--primary-color);
-        }
-
-        .project-tagline {
-            font-style: italic;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .project p {
-            margin-bottom: 0;
-            color: #666;
-        }
-
-        .footer-divider {
-            width: 100%;
-            border: 0;
-            height: 1px;
-            margin: 2rem 0;
-            background-image: linear-gradient(to right, transparent, var(--muted-color), transparent);
-        }
-
-        @media (min-width: 768px) {
-            .nav-link svg {
-                width: 20px;
-                height: 20px;
-            }
-            .nav-text {
-                display: inline;
-            }
-        }
-    </style>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M20 50 C20 27.9 37.9 10 60 10 C82.1 10 100 27.9 100 50 C100 72.1 82.1 90 60 90 C37.9 90 20 72.1 20 50 Z' fill='%23a0aec0'/><path d='M0 50 C0 27.9 17.9 10 40 10 C62.1 10 80 27.9 80 50 C80 72.1 62.1 90 40 90 C17.9 90 0 72.1 0 50 Z' fill='%23718096'/></svg>">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <div class="container">
         <header>
             <a href="/" class="logo">
                 <svg viewBox="0 0 100 100" aria-hidden="true">
-                    <path d="M20 50 C20 27.9 37.9 10 60 10 C82.1 10 100 27.9 100 50 C100 72.1 82.1 90 60 90 C37.9 90 20 72.1 20 50 Z" fill="#a0aec0"/>
-                    <path d="M0 50 C0 27.9 17.9 10 40 10 C62.1 10 80 27.9 80 50 C80 72.1 62.1 90 40 90 C17.9 90 0 72.1 0 50 Z" fill="#718096"/>
+                    <path
+                        d="M20 50 C20 27.9 37.9 10 60 10 C82.1 10 100 27.9 100 50 C100 72.1 82.1 90 60 90 C37.9 90 20 72.1 20 50 Z"
+                        fill="#a0aec0" />
+                    <path
+                        d="M0 50 C0 27.9 17.9 10 40 10 C62.1 10 80 27.9 80 50 C80 72.1 62.1 90 40 90 C17.9 90 0 72.1 0 50 Z"
+                        fill="#718096" />
                 </svg>
                 <span class="logo-name">Studio Reverb</span>
             </a>
             <nav>
-                <a href="https://buymeacoffee.com/studioreverb" target="_blank" class="nav-link" title="Support the studio">
+                <a href="https://buymeacoffee.com/studioreverb" target="_blank" class="nav-link"
+                    title="Support the studio" aria-label="Support the studio">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
                         <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
@@ -241,7 +58,9 @@
 
         <main>
             <section class="about-section">
-                <p>A creative experiment in mixing design, development, and AI to see what’s possible when you let modern tools handle the heavy lifting. It's all about building cool, polished experiences that focus on the fun rather than the complexity.</p>
+                <p>A creative experiment in mixing design, development, and AI to see what’s possible when you let
+                    modern tools handle the heavy lifting. It's all about building cool, polished experiences that focus
+                    on the fun rather than the complexity.</p>
             </section>
 
             <section class="projects">
@@ -249,7 +68,8 @@
                 <section class="project">
                     <div class="project-header">
                         <h3>Distill.bkmk</h3>
-                        <a href="https://chromewebstore.google.com/detail/distill/mjhgnkjgjcejfjmgpljljmnfknpcbeba" target="_blank" class="project-link" aria-label="View Distill project on Chrome Web Store">
+                        <a href="https://chromewebstore.google.com/detail/distill/mjhgnkjgjcejfjmgpljljmnfknpcbeba"
+                            target="_blank" class="project-link" aria-label="View Distill project on Chrome Web Store">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                 <polyline points="15 3 21 3 21 9"></polyline>
@@ -258,7 +78,10 @@
                         </a>
                     </div>
                     <p class="project-tagline">Super-minimal bookmark manager/ launcher</p>
-                    <p>A lightweight bookmark manager for the minimalist. Distill.bkmk removes the hierarchy of traditional bookmarking, offering a clean, flat-file approach to your links. Features include instant filtering, auto-launch, and rapid inline management. No visual noise—just your data, ready to launch.</p>
+                    <p>A lightweight bookmark manager for the minimalist. Distill.bkmk removes the hierarchy of
+                        traditional bookmarking, offering a clean, flat-file approach to your links. Features include
+                        instant filtering, auto-launch, and rapid inline management. No visual noise—just your data,
+                        ready to launch.</p>
                 </section>
                 <section class="project">
                     <div class="project-header">
@@ -266,7 +89,8 @@
                             <h3>Vinyl Vibe</h3>
                             <span class="wip-badge">In Progress</span>
                         </div>
-                        <a href="#" target="_blank" class="project-link" aria-label="View Vinyl Vibe project (coming soon)" style="display: none;">
+                        <a href="#" target="_blank" class="project-link"
+                            aria-label="View Vinyl Vibe project (coming soon)" style="display: none;">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                 <polyline points="15 3 21 3 21 9"></polyline>
@@ -274,7 +98,11 @@
                             </svg>
                         </a>
                     </div>
-                    <p>Vinyl Vibe is a social playground for crate diggers. We’ve turned collecting into a game where you showcase your heavy hitters and try to match them with other users' libraries. It's pretty simple: the more records you match, the more power you get to curate and style your own personal collection. With built-in chat to talk shop, it’s all about connecting over the music you love—minus the dust.</p>
+                    <p>Vinyl Vibe is a social playground for crate diggers. We’ve turned collecting into a game where
+                        you showcase your heavy hitters and try to match them with other users' libraries. It's pretty
+                        simple: the more records you match, the more power you get to curate and style your own personal
+                        collection. With built-in chat to talk shop, it’s all about connecting over the music you
+                        love—minus the dust.</p>
                 </section>
             </section>
         </main>
@@ -282,4 +110,5 @@
     </div>
 
 </body>
+
 </html>
