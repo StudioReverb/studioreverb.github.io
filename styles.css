@@ -205,3 +205,14 @@ main {
         display: inline;
     }
 }
+
+.site-footer {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.site-footer p {
+    color: var(--muted-color);
+    font-size: 0.875rem;
+    margin: 0;
+}
